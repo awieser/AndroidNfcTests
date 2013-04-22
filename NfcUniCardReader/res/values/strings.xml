@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NFC Uni Card Reader</string>
+    <string name="card_count">Card Count:</string>
+    <string name="action_email">Email</string>
+    <string name="action_sort">Sort</string>
+    <string name="action_about">About</string>
+    <string name="action_delete_all">Delete All</string>
+    <string name="context_delete">Delete</string>
+    <string name="empty_listview">Empty.</string>
+    <string name="emptyCardCount">0</string>
+</resources>
