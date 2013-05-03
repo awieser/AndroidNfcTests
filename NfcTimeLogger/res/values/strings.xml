@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NfcTimeLogger</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_section1">Detail</string>
+    <string name="title_section2">Summary</string>
+    <string name="title_section3">Create Tags</string>
+    
+    <string name="textbox_createtag">Create new Tag:</string>
+    
+    <string name="button_writetag">write to Tag</string>
+    
+    <string name="edittext_createtag_hint">tag name</string>
+
+</resources>
