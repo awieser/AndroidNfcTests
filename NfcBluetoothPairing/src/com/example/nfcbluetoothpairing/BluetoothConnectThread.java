@@ -45,7 +45,7 @@ public class BluetoothConnectThread extends Thread {
 				BluetoothActiveSocket activeSocketThread = new BluetoothActiveSocket(
 						btSocket);
 				activeSocketThread.start();
-				MessageService.getinstance().addActiveSocketThread(
+				MessageService.getinstance().addActiveSocketThreadServer(
 						activeSocketThread);
 			} else {
 				Log.d("bluetooth-connect-thread", "could not connect");

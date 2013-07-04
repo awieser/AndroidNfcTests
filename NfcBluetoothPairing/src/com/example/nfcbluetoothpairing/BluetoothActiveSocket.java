@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import android.bluetooth.BluetoothSocket;
-import android.os.Handler;
 
 public class BluetoothActiveSocket extends Thread{
 

@@ -6,7 +6,6 @@ import java.util.List;
 import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
-import android.widget.AnalogClock;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 
@@ -24,7 +23,7 @@ public class MessageService {
 
 		handler = new Handler() {
 			public void handleMessage(android.os.Message msg) {
-				Log.d(NFC_BLUETOOTH_PAIRING, "got message: " + (String) msg.obj);
+//				Log.d(NFC_BLUETOOTH_PAIRING, "got message: " + (String) msg.obj);
 
 				switch (msg.what) {
 				case 0: // TODO
@@ -60,6 +59,7 @@ public class MessageService {
 	}
 
 	public synchronized void sendLobbyMessage(String msg) {
+		handler.obtainMessage(0, "me:" + msg).sendToTarget();
 		for (BluetoothActiveSocket socket : listeningThreads) {
 			socket.sendMessage(msg);
 			Log.d(NFC_BLUETOOTH_PAIRING, "MessageService: send:" + msg);
@@ -76,6 +76,17 @@ public class MessageService {
 
 	public Handler getHandler() {
 		return handler;
+	}
+
+	public void addActiveSocketThreadServer(
+			BluetoothActiveSocket activeSocketThread) {
+		for (BluetoothActiveSocket socket : listeningThreads) {
+			socket.close();
+			listeningThreads.remove(socket);
+		}
+		addActiveSocketThread(activeSocketThread);
+		
+		
 	}
 
 }
