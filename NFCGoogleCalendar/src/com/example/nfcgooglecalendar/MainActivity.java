@@ -101,25 +101,6 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	/*
-	 * private void showUserSettings() { SharedPreferences sharedPrefs =
-	 * PreferenceManager .getDefaultSharedPreferences(this);
-	 * 
-	 * StringBuilder builder = new StringBuilder();
-	 * 
-	 * builder.append("\n Title: " + sharedPrefs.getString("title", "NULL"));
-	 * 
-	 * builder.append("\n Send report:" +
-	 * sharedPrefs.getBoolean("prefSendReport", false));
-	 * 
-	 * builder.append("\n Sync Frequency: " +
-	 * sharedPrefs.getString("prefSyncFrequency", "NULL"));
-	 * 
-	 * TextView settingsTextView = (TextView)
-	 * findViewById(R.id.textUserSettings);
-	 * 
-	 * settingsTextView.setText(builder.toString()); }
-	 */
 
 	public void buttonClickAddEvent(View v) {
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
