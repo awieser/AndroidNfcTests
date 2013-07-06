@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 
 			// Do something with the values...
 
-			textViewTest.append(calID + "- " + displayName + "\n");
+			textViewTest.append(calID + "- " + ownerName + "\n");
 		}
 
 	}
@@ -91,10 +91,12 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 
 		case R.id.action_settings:
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
+			startActivity(new Intent(this, SettingsActivity.class));
 			break;
-
+			
+		case R.id.action_write_tag:
+			startActivity(new Intent(this, WriteTagActivity.class));
+			break;
 		}
 
 		return super.onOptionsItemSelected(item);

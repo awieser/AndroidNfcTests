@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory
-        android:title="@string/settings">
+    <PreferenceCategory android:title="@string/settings" >
         <EditTextPreference
             android:defaultValue=""
             android:key="prefCalendarTitle"
-            android:title="@string/pref-calendar-title" 
-            android:summary=""/>
+            android:summary=""
+            android:title="@string/pref_calendar_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>
