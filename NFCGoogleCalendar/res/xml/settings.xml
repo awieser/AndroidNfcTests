@@ -8,6 +8,6 @@
             android:key="prefCalendarTitle"
             android:title="@string/pref-calendar-title" 
             android:summary=""/>
-        <EditTextPreference />
+    </PreferenceCategory>
 
 </PreferenceScreen>

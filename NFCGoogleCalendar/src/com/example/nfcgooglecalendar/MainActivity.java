@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 
 		// Run query
 		Cursor cur = null;
-		ContentResolver cr = getContentResolver();
+		ContentResolver cr = getContentResolver();		
 		Uri uri = Calendars.CONTENT_URI;
 		/*
 		 * String selection = "((" + Calendars.ACCOUNT_NAME + " = ?) AND (" +
