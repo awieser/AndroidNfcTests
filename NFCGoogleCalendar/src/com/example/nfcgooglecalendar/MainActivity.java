@@ -17,7 +17,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	public static final String[] EVENT_PROJECTION = new String[] {
@@ -115,7 +114,7 @@ public class MainActivity extends Activity {
 		endMillis = beginTime.getTimeInMillis();
 
 		// TODO: check if title exists
-		String title = sharedPrefs.getString("prefCalendarTitle", "");
+		String title = sharedPrefs.getString(SettingsActivity.KEY_PREFERENCE_CALENDAR_TITLE, "");
 		String description = "";
 
 		// get the event ID that is the last element in the Uri

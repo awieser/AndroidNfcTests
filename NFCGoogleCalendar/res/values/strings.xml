@@ -3,6 +3,7 @@
 
     <string name="app_name">NFCGoogleCalendar</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="settings">Settings</string>
 
+    <string name="pref-calendar-title">Calendar Entry Title</string>
 </resources>
