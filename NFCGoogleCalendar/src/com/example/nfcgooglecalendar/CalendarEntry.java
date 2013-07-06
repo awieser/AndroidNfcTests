@@ -15,4 +15,8 @@ public class CalendarEntry {
 		return displayName + " (" + ownerName + ")";
 	}
 
+	public String getOwnerName() {
+		return ownerName;
+	}
+
 }

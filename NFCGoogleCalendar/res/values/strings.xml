@@ -9,6 +9,6 @@
     <string name="title_activity_write_tag">WriteTagActivity</string>
     <string name="write_to_nfc_tag">Write To NFC Tag</string>
     
-    <string name="write_tag_description">Select Calendar</string>
+    <string name="write_tag_description">Select a Calendar and put a NFC Tag to the NFC Antenna</string>
 
 </resources>
