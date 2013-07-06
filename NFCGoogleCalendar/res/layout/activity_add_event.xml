@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AddEventActivity" >
+
+    <TextView
+        android:id="@+id/textViewAddEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewAddEvent" />
+
+    <Button
+        android:id="@+id/buttonHalfHour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/halfhour"
+        android:onClick="buttonClickHalfHour" />
+
+    <Button
+        android:id="@+id/buttonOneHour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/onehour" 
+        android:onClick="buttonClickOneHour"/>
+    
+    <Button
+        android:id="@+id/buttonTwoHours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/twohours" 
+        android:onClick="buttonClickTwoHours"/>
+
+    <TextView
+        android:id="@+id/textViewSetManualEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_manual_end_time" />
+
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_manual" 
+        android:onClick="buttonClickManual"/>
+
+</LinearLayout>

@@ -5,10 +5,21 @@
     <string name="action_settings">Settings</string>
     <string name="action_write_tag"> Write NFC Tag</string>
     <string name="settings">Settings</string>
-    <string name="pref_calendar_title">Calendar Entry Title</string>
-    <string name="title_activity_write_tag">WriteTagActivity</string>
+    <string name="pref_event_title">Calendar Event Title</string>
+    <string name="pref_event_description">Calendar Event Description</string>
+    <string name="title_activity_write_tag">NFCGoogleCalendar Write Tag</string>
     <string name="write_to_nfc_tag">Write To NFC Tag</string>
-    
     <string name="write_tag_description">Select a Calendar and put a NFC Tag to the NFC Antenna</string>
-
+    <string name="title_activity_add_event">NFCGoogleCalendar Add Event</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="textViewAddEvent">Add Event to Calendar </string>
+    <string name="onehour"> 1 hour </string>
+    <string name="halfhour"> 0.5 hour </string>
+    <string name="twohours"> 2 hours </string>
+    <string name="set_manual_end_time"> Set manual End Time</string>
+    <string name="button_manual"> Manual</string>
+	<string name="text_main_manual">Attention: Enable Sync in Google Calendar App! \n\n Select Calendar for manual adding of Events</string>
+	<string name="button_manual_add_event">Add Event</string>
+	<string name="pref_event_description_default_value">added using app NFCGoogleCalendar</string>
+	<string name="pref_event_title_default_value">NO TITLE SET!</string>
 </resources>

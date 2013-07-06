@@ -14,7 +14,9 @@ public class SettingsFragment extends PreferenceFragment implements
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings);
 		onSharedPreferenceChanged(getPreferenceScreen().getSharedPreferences(),
-				SettingsActivity.KEY_PREFERENCE_CALENDAR_TITLE);
+				SettingsActivity.KEY_PREFERENCE_EVENT_TITLE);
+		onSharedPreferenceChanged(getPreferenceScreen().getSharedPreferences(),
+				SettingsActivity.KEY_PREFERENCE_EVENT_DESCRIPTION);
 	}
 
 	@Override
@@ -34,10 +36,10 @@ public class SettingsFragment extends PreferenceFragment implements
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
-		if (key.equals(SettingsActivity.KEY_PREFERENCE_CALENDAR_TITLE)) {
+		if (key.equals(SettingsActivity.KEY_PREFERENCE_EVENT_TITLE)
+				|| key.equals(SettingsActivity.KEY_PREFERENCE_EVENT_DESCRIPTION)) {
 			Preference pref = findPreference(key);
 			pref.setSummary(sharedPreferences.getString(key, ""));
-
 		}
 	}
 }

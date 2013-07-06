@@ -3,10 +3,17 @@
 
     <PreferenceCategory android:title="@string/settings" >
         <EditTextPreference
-            android:defaultValue=""
+            android:defaultValue="@string/pref_event_title_default_value"
             android:key="prefCalendarTitle"
             android:summary=""
-            android:title="@string/pref_calendar_title" />
+            android:title="@string/pref_event_title" />
+        
+        <EditTextPreference
+            android:key="prefCalendarDescription"
+            android:summary=""
+            android:title="@string/pref_event_description" 
+            android:defaultValue="@string/pref_event_description_default_value"/>
+        	
     </PreferenceCategory>
 
 </PreferenceScreen>

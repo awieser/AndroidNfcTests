@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 
 public class SettingsActivity extends Activity {
-	public static final String KEY_PREFERENCE_CALENDAR_TITLE = "prefCalendarTitle";
+	public static final String KEY_PREFERENCE_EVENT_TITLE = "prefCalendarTitle";
+	public static final String KEY_PREFERENCE_EVENT_DESCRIPTION = "prefCalendarDescription";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
