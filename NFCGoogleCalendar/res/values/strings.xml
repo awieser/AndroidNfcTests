@@ -16,7 +16,7 @@
     <string name="onehour"> 1 hour </string>
     <string name="halfhour"> 0.5 hour </string>
     <string name="twohours"> 2 hours </string>
-    <string name="set_manual_end_time"> Set manual End Time</string>
+    <string name="set_manual_end_time"> \n Or Set manual End Time:</string>
     <string name="button_manual"> Manual</string>
 	<string name="text_main_manual">Attention: Enable Sync in Google Calendar App! \n\n Select Calendar for manual adding of Events</string>
 	<string name="button_manual_add_event">Add Event</string>
