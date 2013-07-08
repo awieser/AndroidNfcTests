@@ -50,6 +50,7 @@ public class CalendarAdapter {
 			ret.add(new CalendarEntry(ownerName, displayName, calId));
 
 		}
+		cur.close();
 		return ret;
 	}
 
@@ -70,10 +71,12 @@ public class CalendarAdapter {
 			ownerName = cur.getString(PROJECTION_OWNER_ACCOUNT_INDEX);
 
 			if (ownerName.equals(ownerNameSearch)) {
+				cur.close();
 				return new CalendarEntry(ownerName, displayName, calID);
 			}
 
 		}
+		cur.close();
 		return null;
 	}
 
@@ -107,10 +110,12 @@ public class CalendarAdapter {
 			ownerName = cur.getString(PROJECTION_OWNER_ACCOUNT_INDEX);
 
 			if (calID == cal_id) {
+				cur.close();
 				return new CalendarEntry(ownerName, displayName, calID);
 			}
 
 		}
+		cur.close();
 		return null;
 	}
 

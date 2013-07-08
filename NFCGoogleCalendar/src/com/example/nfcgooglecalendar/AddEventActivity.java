@@ -24,7 +24,7 @@ public class AddEventActivity extends Activity {
 	public static final String MANUAL_ADD_EVENT = "MANUAL_ADD_EVENT";
 	public static final String CALENDAR_ID = "CALENDAR_ID";
 	private TextView textViewAddEvent;
-	private CalendarEntry calendarEntry;
+	private CalendarEntry calendarEntry = null;
 	private TimePicker timePicker;
 	private String eventTitle;
 	private String eventDescription;
@@ -32,29 +32,37 @@ public class AddEventActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_add_event);
 		textViewAddEvent = (TextView) findViewById(R.id.textViewAddEvent);
+
 		proccessIntent(getIntent());
 
-		textViewAddEvent.append(" " + calendarEntry.getDisplayName());
+		if (calendarEntry != null) {
 
-		timePicker = (TimePicker) findViewById(R.id.timePicker1);
-		timePicker.setIs24HourView(DateFormat.is24HourFormat(this));
+			textViewAddEvent.append(" " + calendarEntry.getDisplayName());
 
-		Calendar time = Calendar.getInstance();
+			timePicker = (TimePicker) findViewById(R.id.timePicker1);
+			timePicker.setIs24HourView(DateFormat.is24HourFormat(this));
 
-		timePicker.setCurrentHour(time.get(Calendar.HOUR_OF_DAY));
-		timePicker.setCurrentMinute(time.get(Calendar.MINUTE));
+			Calendar time = Calendar.getInstance();
 
-		SharedPreferences sharedPrefs = PreferenceManager
-				.getDefaultSharedPreferences(this);
-		eventTitle = sharedPrefs.getString(
-				SettingsActivity.KEY_PREFERENCE_EVENT_TITLE, getResources()
-						.getString(R.string.pref_event_title_default_value));
-		eventDescription = sharedPrefs.getString(
-				SettingsActivity.KEY_PREFERENCE_EVENT_DESCRIPTION,
-				getResources().getString(
-						R.string.pref_event_description_default_value));
+			timePicker.setCurrentHour(time.get(Calendar.HOUR_OF_DAY));
+			timePicker.setCurrentMinute(time.get(Calendar.MINUTE));
+
+			SharedPreferences sharedPrefs = PreferenceManager
+					.getDefaultSharedPreferences(this);
+			eventTitle = sharedPrefs
+					.getString(
+							SettingsActivity.KEY_PREFERENCE_EVENT_TITLE,
+							getResources().getString(
+									R.string.pref_event_title_default_value));
+			eventDescription = sharedPrefs.getString(
+					SettingsActivity.KEY_PREFERENCE_EVENT_DESCRIPTION,
+					getResources().getString(
+							R.string.pref_event_description_default_value));
+
+		}
 	}
 
 	@Override
@@ -92,9 +100,15 @@ public class AddEventActivity extends Activity {
 								ownerName, getContentResolver());
 					}
 				}
+
 				if (calendarEntry == null) {
+					Log.d(LOG_ADD_EVENT, "calendar not found");
 					finishNoCalendarFound();
+				} else {
+					Log.d(LOG_ADD_EVENT,
+							"calendar found, id:" + calendarEntry.getId());
 				}
+
 			}
 		}
 	}
@@ -102,7 +116,7 @@ public class AddEventActivity extends Activity {
 	private void finishNoCalendarFound() {
 		String toastmsg = "No calendar found!";
 		Toast.makeText(this, toastmsg, Toast.LENGTH_LONG).show();
-		finish();
+		this.finish();
 	}
 
 	public void buttonClickHalfHour(View v) {

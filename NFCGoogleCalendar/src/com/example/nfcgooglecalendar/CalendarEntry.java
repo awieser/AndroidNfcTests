@@ -21,7 +21,7 @@ public class CalendarEntry {
 		return ownerName;
 	}
 
-	public CharSequence getDisplayName() {
+	public String getDisplayName() {
 		return displayName;
 	}
 
