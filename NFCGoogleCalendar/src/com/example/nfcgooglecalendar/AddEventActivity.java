@@ -1,7 +1,6 @@
 package com.example.nfcgooglecalendar;
 
 import java.util.Calendar;
-
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -9,6 +8,9 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.format.DateFormat;
@@ -148,14 +150,40 @@ public class AddEventActivity extends Activity {
 		addEvent(endMillis);
 	}
 
-	private void addEvent(long endMillis) {
+	private void addEvent(final long endMillis) {
 		Calendar beginTime = Calendar.getInstance();
-		long startMillis = beginTime.getTimeInMillis();
-		CalendarAdapter.addEvent(getContentResolver(), calendarEntry.getId(),
-				eventTitle, eventDescription, startMillis, endMillis);
-		String toastmsg = "Added event title:" + eventTitle
-				+ " \n to calendar:" + calendarEntry.getDisplayName() + "\n";
-		Toast.makeText(this, toastmsg, Toast.LENGTH_LONG).show();
-		finish();
+		Calendar endTime = Calendar.getInstance();
+		endTime.setTimeInMillis(endMillis);
+		String endTimeString = endTime.get(Calendar.HOUR_OF_DAY) + ":" + endTime.get(Calendar.MINUTE);
+		
+		
+		final long startMillis = beginTime.getTimeInMillis();
+
+		
+		String eventMessage = "Title: " + eventTitle
+				+ " \nCalendar:" + calendarEntry.getDisplayName() + "\nEndtime:" +  endTimeString + "\n\nAttention: Activate automatic sync for this calendar!";
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(eventMessage).setTitle("Adding Event");
+		builder.setPositiveButton("Ok", new OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface arg0, int arg1) {
+				CalendarAdapter.addEvent(getContentResolver(),
+						calendarEntry.getId(), eventTitle, eventDescription,
+						startMillis, endMillis);
+				finish();
+			}
+		});
+		builder.setNegativeButton("Cancel", new OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface arg0, int arg1) {
+
+			}
+		});
+
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
 }
